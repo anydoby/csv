@@ -1,0 +1,20 @@
+<configuration scan="true">
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>log/csv.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- daily rollover -->
+      <fileNamePattern>log/csv-%d{yyyy-MM-dd}.log</fileNamePattern>
+      <!-- keep 30 days' worth of history -->
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%date %-5level [%thread] %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="${log-level:-DEBUG}">
+    <appender-ref ref="FILE" />
+  </root>
+
+</configuration>

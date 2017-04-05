@@ -6,7 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 /**
- * Ensures runtime resolution of {@link FileMetaData} and {@link CSVColumn} works
+ * Ensures runtime resolution of {@link FileMetaData} and {@link CSVColumn} works, also ensures that inheritance of
+ * annotations is preserved.
  * 
  * @author sergey
  *
